@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distrito de Calapuja</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <div class="logo-icon"></div> <!-- Logo geométrico -->
+            </div>
+            <ul class="menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1 class="fade-in">Distrito de Calapuja</h1>
+            <p class="fade-in delay">Reportes de problemas infraestructurales</p>
+            <div class="buttons slide-up">
+                <a href="#reportar" class="btn red" onclick="openModal('reportarModal')">Reportar Problema</a>
+                <a href="#ver" class="btn green" id="verReportesBtn" onclick="openVerReportes()">Ver Reportes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Reporte -->
+    <div id="reportarModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('reportarModal')">×</span>
+            <h2>Reporte de Problema</h2>
+            <form id="reportForm">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" placeholder="Ingresa tu nombre completo" required>
+                
+                <label for="dni">DNI</label>
+                <input type="text" id="dni" placeholder="Ingresa tu DNI" required>
+                
+                <label for="direccion">Dirección</label>
+                <input type="text" id="direccion" placeholder="Ingresa tu dirección" required>
+                
+                <label for="descripcion">Descripción del problema</label>
+                <textarea id="descripcion" placeholder="Describe el problema" required></textarea>
+                
+                <button type="submit" class="btn green">Enviar Reporte</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Ver Reportes -->
+    <div id="verReportesModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('verReportesModal')">×</span>
+            <h2 class="green-text">Reportes Enviados</h2>
+            <div id="reportesList"></div>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmación de Envío -->
+    <div id="successMessageModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeSuccessMessage()">×</span>
+            <h2>Reporte enviado con éxito</h2>
+            <p>Gracias por reportar el problema. Su reporte ha sido recibido correctamente.</p>
+        </div>
+    </div>
+
+    <!-- Sección de Reportes -->
+    <section id="reportes" class="content-section">
+        <div class="centered-content" style="background-color: #DC191B;">
+            <h2 class="slide-up">Sección de Reportes</h2>
+            <p class="slide-up delay" style="color: white;">Consulta los problemas reportados en el distrito y contribuye con soluciones.</p>
+            <div id="faqSection">
+                <h3 style="color: white;">¿Qué hacer cuando haya rajaduras en un puente?</h3>
+                <p class="faq-answer" id="a1" style="color: white;">Contactar a las autoridades locales y reportar el incidente. Evitar transitar por el puente si es posible.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="content-section">
+        <div class="centered-content">
+            <h2 class="slide-up">Contacto</h2>
+            <p class="slide-up delay">¿Tienes alguna consulta o sugerencia? Contáctanos y trabajemos juntos por un mejor distrito.</p>
+            <p>Email: contacto@calapuja.com</p>
+            <p>Teléfono: 987654321</p>
+            <p>Dirección: Calle Ficticia 123</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Distrito de Calapuja. creado por Lionel Edersson Aragos Illanes.</p>
+    </footer>
+</body>
+</html>
